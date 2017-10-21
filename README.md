@@ -17,7 +17,8 @@ To use the variables, position them like this.
     --btb-close-active:#F1707A;
     --btb-mm-hover:#363636;
     --btb-mm-active:#505050;
-}```
+}
+```
 `--btb-color` will change the entire titlebar color.
 `--btb-border` while change the bottom border color.
 `--btb-icon-stroke` will change the icon color.
