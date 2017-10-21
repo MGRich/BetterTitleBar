@@ -1,0 +1,2 @@
+# BetterTitleBar
+NOTE: ONLY FOR CANARY
