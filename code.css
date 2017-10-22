@@ -1,66 +1,81 @@
 :root {
-    --btb-color: #171717;
+    --btb-color:#171717;
     --btb-border:#252525;
-    --btb-icon-stroke:white;
-    --btb-discord-color:white;
+    --btb-light:1; /* 1 for dark, 0 for light, NOTE: THE BACKGROUNDS BREAK WITH THIS SET TO 0.*/
     --btb-close-hover:#E81123;
     --btb-close-active:#F1707A;
     --btb-mm-hover:#363636;
     --btb-mm-active:#505050;
+    --btb-titlebar-height:32;
+    --btb-button-width:48px;
 }
-.winButton-U7zAqI {
+
+.titlebar{
+    background:var(--btb-color);
+    height:calc(1px*var(--btb-titlebar-height))!important;
+    width:calc(100% + 1px);
+    border-bottom:var(--btb-border) 1px solid
+}
+
+.popout-bottom[style*="overflow: hidden; visibility: visible;"]{
+    top:92px!important; /*tweak this*/
+}
+
+.titlebar:before{
+    content:"";
+    background-image:url(https://rawgit.com/MGRich/BetterTitleBar/stable/svg/discord.svg);
+    position:absolute;
+    top:calc(0.21875px*var(--btb-titlebar-height));
+    left:calc(.25px*var(--btb-titlebar-height));
+    opacity:1;
+    height:calc(3.75px*var(--btb-titlebar-height));
+    width:calc(2.03125px*var(--btb-titlebar-height));
+    background-size:cover;
+    fill:orange;
+    filter:brightness(var(--btb-light))
+}
+
+.win-buttons button{
+    height:calc(1px*var(--btb-titlebar-height))!important;
+    width:var(--btb-button-width)!important;
+    background-size: calc(.625px*var(--btb-titlebar-height));
+    background-repeat:no-repeat;
+    opacity:1;
+    filter:brightness(var(--btb-light));
+    margin-right:1px; 
+}
+
+.win-buttons{
+    height:calc(1px*var(--btb-titlebar-height))!important;
+    right:0px;
+    top;0px;
+}
+.win-buttons button {
     transition: .2s!important;
     will-change: background-color!important;
 }
-.winButton-U7zAqI:hover, .winButton-U7zAqI:active {
+.win-buttons button:hover, .win-buttons button:active {
     transition:0s!important;
 }
-.winButtonClose-2rIvsa:hover {
-    background-color: var(--btb-close-hover);
+.win-buttons button.win-close:hover {
+    background-color:var(--btb-close-hover);
 }
-.winButtonMinMax-bT_gQ1:hover {
-    background-color: var(--btb-mm-hover);
+.win-buttons button:hover {
+    background-color:var(--btb-mm-hover);
+} 
+.win-buttons button.win-close:active {
+    background-color:var(--btb-close-active);
 }
-.winButtonClose-2rIvsa:active  {
-    background-color: var(--btb-close-active);
+.win-buttons button:active {
+    background-color:var(--btb-mm-active);
+} 
+.win-buttons.win-buttons-notice{
+    top:0!important
 }
-.winButtonMinMax-bT_gQ1:active {
-    background-color: var(--btb-mm-active);
+.app{
+    margin-top:calc((1px*var(--btb-titlebar-height)) + 1px)
+
 }
-.winButtonClose-2rIvsa:active svg polygon {
-    fill:black!important;
-}
-.winButton-U7zAqI svg polygon, .winButtonMinMax-bT_gQ1 svg[name="TitleBarMinimize"] rect {
-    fill:var(--btb-icon-stroke)!important;
-}
-.winButtonMinMax-bT_gQ1 svg[name="TitleBarMaximize"] rect {
-    stroke:var(--btb-icon-stroke)!important;
-}
-.winButtonMinMax-bT_gQ1 {
-    margin-right:1px;
-    background-blend-mode: overlay!important;
-}
-.typeWindows-15E0Ys {
-    background:var(--btb-color);
-    margin-top: 0;
-    height:32px!important;
-    border-bottom: var(--btb-border) 1px solid;
-}
-.winButton-U7zAqI {
-    opacity:1!important;
-    width:46px;
-    height:32px;
-    padding-top: 4px;
-}
-.wordmark-2L03Wr svg {
-    width:65px;
-    height:19px;
-    top:7px!important;
-    position: absolute;
-}
-.wordmark-2L03Wr svg path {
-    fill:var(--btb-discord-color);
-}
-.wordmark-2L03Wr {
-    opacity: 1!important;
+.separator-win{
+    display:none
 }
