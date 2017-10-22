@@ -1,6 +1,6 @@
 # BetterTitleBar
 This version supports stable, with a small limitation.
-![Preview](https://rawgit.com/MGRich/BetterTitleBar/master/Discord_2017-10-21_23-22-34.png)
+![Preview](https://rawgit.com/MGRich/BetterTitleBar/stable/Discord_2017-10-21_23-22-34.png)
 Makes the new titlebar much cleaner and customizable.
 To use this, put this at the start of your custom css:
 ```@import url(https://rawgit.com/MGRich/BetterTitleBar/stable/code.css);```
