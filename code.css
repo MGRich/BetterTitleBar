@@ -48,7 +48,7 @@
 .win-buttons{
     height:calc(1px*var(--btb-titlebar-height))!important;
     right:0px;
-    top;0px;
+    top:0px;
 }
 .win-buttons button {
     transition: .2s!important;
