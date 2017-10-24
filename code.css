@@ -1,66 +1,188 @@
 :root {
-    --btb-color: #171717;
+    --btb-icon-stroke:white; /* for canary */
+    --btb-discord-color:white; /* for canary */
+    --btb-color:#171717;
     --btb-border:#252525;
-    --btb-icon-stroke:white;
-    --btb-discord-color:white;
+    --btb-light:1; /* 1 for dark, 0 for light, NOTE: THE BACKGROUNDS BREAK WITH THIS SET TO 0. will do nothing in canary, as replaced by icon stroke and discord color*/
     --btb-close-hover:#E81123;
     --btb-close-active:#F1707A;
     --btb-mm-hover:#363636;
     --btb-mm-active:#505050;
+    --btb-titlebar-height:32;
+    --btb-button-width:48px;
 }
-.winButton-U7zAqI {
+.private-channels .channel.btn-friends .channel-name {
+    top:calc((var(--bsb-dm-size) / 2) - 6px);
+}
+.private-channels .channel .avatar-small, .private-channels .channel .icon-friends {
+    width:var(--bsb-dm-size);
+    height:var(--bsb-dm-size);
+    background-size:var(--bsb-dm-size);
+    background-repeat: no-repeat;
+    margin:0!important;
+    top:calc(var(--bsb-dm-size)*.2);
+}
+.private-channels .channel .close {
+    position: absolute;
+    top:-5px;
+    left:-5px;
+}
+.private-channels .channel {
+    height:calc(var(--bsb-dm-size) + 20px)!important;
+}
+.private-channels .channel a {
+    background-repeat: no-repeat;
+    background-color:transparent!important;
+    margin:0!important;
+}
+.private-channels .channel .channel-name {
+    left:calc((1.4*var(--bsb-dm-size)) + 5px)!important;
+    top:calc(var(--bsb-dm-size) / 2);
+    position: absolute;
+    color:var(--bsb-dm-color);
+}
+.private-channels as.channel .close, .private-channels .channel .channel-name {
+    display:block!important;
+    opacity:.3;
+    transition:.2s ease;
+}
+.private-channels .channel:hover .close {
+    opacity:1;
+}
+.private-channels .channel .channel-name div {
+    color:var(--bsb-dm-color);
+}
+.pictureInPictureVideo-2w62Uz .iconButtonMargin-3k5x3x, .pictureInPictureVideo-2w62Uz .horizontal-2BEEBe>.flex-lFgbSz:first-child {
+    top:3px!important;
+    left:20px;
+    position: absolute;
+}
+.pictureInPictureVideo-2w62Uz .iconButtonMargin-3k5x3x {
+    top:-1px!important;
+    left:-40px!important;
+}
+.pictureInPictureVideo-2w62Uz .iconButtonMargin-3k5x3x polygon {
+    fill:var(--bpp-camera-streak);
+}
+.pictureInPictureVideo-2w62Uz .overlayRight-uHXbje {
+    top:4px!important;
+    right:0px!important;
+    position: absolute;
+}
+.pictureInPictureVideo-2w62Uz .iconButton-23ZMpe {
+    opacity: 1;
+}
+.pictureInPictureVideo-2w62Uz .channel-1wgtPC {
+    top:6px!important;
+    left:50px!important;
+    font-size:var(--bpp-title-size);
+    position: absolute;
+}
+.pictureInPictureVideo-2w62Uz .overlay-3hR73C {
+    opacity: 1!important;
+    box-shadow: none;
+    border:none;
+}
+.pictureInPictureVideo-2w62Uz {
+    border-top:var(--bpp-border-c) var(--bpp-border-tsize) solid!important;
+    border:var(--bpp-border-c) var(--bpp-border-size) solid;
+    height:calc(var(--bpp-height)*var(--bpp-mult));
+    width:calc(var(--bpp-width)*var(--bpp-mult));
+}
+.iconButtonForeground-1wy8a5 {
+    fill:var(--bpp-icon-streak)!important;
+}
+.titlebar {
+    content:"";
+    background:var(--btb-color);
+    height:calc(1px*var(--btb-titlebar-height))!important;
+    width:calc(100% + 1px);
+    border-bottom:var(--btb-border) 1px solid;
+}
+.appMount-14L89u {
+    background:var(--btb-color);
+}
+
+.container-2OU7Cz {
+    border-top:var(--btb-border) 1px solid;
+}
+.typeWindows-15E0Ys {
+    height:var(--btb-titlebar-height)px;
+    background:transparent!important;
+}
+.app-XZYfmp {
+    position: initial;
+}
+.popout-bottom[style*="overflow: hidden; visibility: visible;"]{
+    top:92px!important; /*tweak this*/
+}
+.titlebar:before, .wordmark-2L03Wr {
+    content:"";
+    background-image:url(https://rawgit.com/MGRich/BetterTitleBar/stable/svg/discord.svg);
+    position:absolute;
+    top:calc(0.21875px*var(--btb-titlebar-height));
+    left:calc(.25px*var(--btb-titlebar-height));
+    opacity:1;
+    height:calc(3.75px*var(--btb-titlebar-height));
+    width:calc(2.03125px*var(--btb-titlebar-height));
+    background-size:cover;
+    fill:orange;
+    filter:brightness(var(--btb-light))
+    padding:0;
+}
+.wordmark-2L03Wr svg {
+    display: none;
+}
+.win-buttons button, .winButton-U7zAqI {
+    height:calc(1px*var(--btb-titlebar-height))!important;
+    width:var(--btb-button-width)!important;
+    background-size: calc(.625px*var(--btb-titlebar-height));
+    background-repeat:no-repeat;
+    opacity:1;
+    filter:brightness(var(--btb-light));
+}
+.win-buttons button, .winButtonMinMax-bT_gQ1 {
+    margin-right: 1px;
+}
+.win-buttons{
+    height:calc(1px*var(--btb-titlebar-height))!important;
+    right:0px;
+    top:0px;
+}
+.win-buttons button, .winButton-U7zAqI {
     transition: .2s!important;
     will-change: background-color!important;
 }
-.winButton-U7zAqI:hover, .winButton-U7zAqI:active {
+.win-buttons button:hover, .win-buttons button:active, .winButton-U7zAqI:hover, .winButton-U7zAqI:active {
     transition:0s!important;
 }
-.winButtonClose-2rIvsa:hover {
-    background-color: var(--btb-close-hover);
+.win-buttons button.win-close:hover, .winButtonClose-2rIvsa:hover {
+    background-color:var(--btb-close-hover);
 }
-.winButtonMinMax-bT_gQ1:hover {
-    background-color: var(--btb-mm-hover);
+.win-buttons button:hover, .winButtonMinMax-bT_gQ1:hover {
+    background-color:var(--btb-mm-hover);
+} 
+.win-buttons button.win-close:active, .winButtonClose-2rIvsa:active {
+    background-color:var(--btb-close-active);
 }
-.winButtonClose-2rIvsa:active  {
-    background-color: var(--btb-close-active);
+.win-buttons button:active, .winButtonMinMax-bT_gQ1:active {
+    background-color:var(--btb-mm-active);
+} 
+.win-buttons.win-buttons-notice{
+    top:0!important
 }
-.winButtonMinMax-bT_gQ1:active {
-    background-color: var(--btb-mm-active);
+.app{
+    margin-top:calc(1px*var(--btb-titlebar-height))
 }
-.winButtonClose-2rIvsa:active svg polygon {
-    fill:black!important;
+.separator-win{
+    display:none
+}
+.wordmark-2L03Wr svg path {
+    fill:var(--btb-discord-color);
 }
 .winButton-U7zAqI svg polygon, .winButtonMinMax-bT_gQ1 svg[name="TitleBarMinimize"] rect {
     fill:var(--btb-icon-stroke)!important;
 }
 .winButtonMinMax-bT_gQ1 svg[name="TitleBarMaximize"] rect {
     stroke:var(--btb-icon-stroke)!important;
-}
-.winButtonMinMax-bT_gQ1 {
-    margin-right:1px;
-    background-blend-mode: overlay!important;
-}
-.typeWindows-15E0Ys {
-    background:var(--btb-color);
-    margin-top: 0;
-    height:32px!important;
-    border-bottom: var(--btb-border) 1px solid;
-}
-.winButton-U7zAqI {
-    opacity:1!important;
-    width:46px;
-    height:32px;
-    padding-top: 4px;
-}
-.wordmark-2L03Wr svg {
-    width:65px;
-    height:19px;
-    top:7px!important;
-    position: absolute;
-}
-.wordmark-2L03Wr svg path {
-    fill:var(--btb-discord-color);
-}
-.wordmark-2L03Wr {
-    opacity: 1!important;
 }
