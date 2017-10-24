@@ -6,7 +6,7 @@ To use this, put this at the start of your custom css:
 ```@import url(https://rawgit.com/MGRich/BetterTitleBar/master/code.css);```
 ## Variables
 To use the variables, position them like this.
-```
+```css
 :root {
     --btb-icon-stroke:white; /* for canary */
     --btb-discord-color:white; /* for canary */
@@ -19,7 +19,6 @@ To use the variables, position them like this.
     --btb-mm-active:#505050;
     --btb-titlebar-height:32;
     --btb-button-width:48px;
-}
 }
 ```
 `--btb-color` will change the entire titlebar color.
